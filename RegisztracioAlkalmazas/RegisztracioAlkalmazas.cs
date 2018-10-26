@@ -77,11 +77,13 @@ namespace RegisztracioAlkalmazas
                 
                 if (FradioButton.Checked == true)
                 {
-                    File.WriteAllText(fileNev, "Név: " + tartalom2 + "\nNem: Férfi\nSzületési Dátum: " + tartalom3 + "\nKedvenc hobbi: " + tartalom1 + "\n" + hobbik);
+                    // File.WriteAllText(fileNev, "Név: " + tartalom2 + "\nNem: Férfi\nSzületési Dátum: " + tartalom3 + "\nKedvenc hobbi: " + tartalom1 + "\n" + hobbik);
+                    File.WriteAllText(fileNev, tartalom2  +"\n"+ tartalom3+"\n" + tartalom1 + "\n"+tartalom5+"\n" + hobbik);
                 }
                 else
                 {
-                    File.WriteAllText(fileNev, "Név: " + tartalom2 + "\nNem: Nő\nSzületési Dátum: " + tartalom3 + "\nKedvenc hobbi: " + tartalom1 + "\n" + hobbik);
+                    // File.WriteAllText(fileNev, "Név: " + tartalom2 + "\nNem: Nő\nSzületési Dátum: " + tartalom3 + "\nKedvenc hobbi: " + tartalom1 + "\n" + hobbik);
+                    File.WriteAllText(fileNev, tartalom2 + "\n" + tartalom3 + "\n" + tartalom1 + "\n" + tartalom4 + "\n" + hobbik);
 
                 }
 
@@ -106,6 +108,12 @@ namespace RegisztracioAlkalmazas
                 //szuldatTextBox.Text = File.ReadAllText(openFileDialog.FileName);
                 //hobbiListBox.Text = File.ReadAllText(openFileDialog.FileName);
                 MessageBox.Show(File.ReadAllText(openFileDialog.FileName));
+                string[] lines = System.IO.File.ReadAllLines(openFileDialog.FileName);
+                nevTextBox.Text = lines[0];
+                szuldatTextBox.Text = lines[1];
+
+                
+                
             }
            
         }
