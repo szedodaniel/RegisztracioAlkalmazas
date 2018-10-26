@@ -150,7 +150,6 @@
             this.mentesButton.TabIndex = 9;
             this.mentesButton.Text = "Mentés";
             this.mentesButton.UseVisualStyleBackColor = true;
-            this.mentesButton.Click += new System.EventHandler(this.mentesButton_Click);
             // 
             // betoltButton
             // 
@@ -161,7 +160,6 @@
             this.betoltButton.TabIndex = 10;
             this.betoltButton.Text = "Betöltés";
             this.betoltButton.UseVisualStyleBackColor = true;
-            this.betoltButton.Click += new System.EventHandler(this.betoltButton_Click);
             // 
             // ujHobbiTextBox
             // 
@@ -222,7 +220,6 @@
             this.Controls.Add(this.hobbiListBox);
             this.Name = "RegisztracioAlkalmazas";
             this.Text = "Regisztrációs alkalmazás";
-            this.Load += new System.EventHandler(this.RegisztracioAlkalmazas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
