@@ -166,9 +166,9 @@
             // ujHobbiTextBox
             // 
             this.ujHobbiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ujHobbiTextBox.Location = new System.Drawing.Point(266, 118);
+            this.ujHobbiTextBox.Location = new System.Drawing.Point(260, 118);
             this.ujHobbiTextBox.Name = "ujHobbiTextBox";
-            this.ujHobbiTextBox.Size = new System.Drawing.Size(100, 23);
+            this.ujHobbiTextBox.Size = new System.Drawing.Size(120, 23);
             this.ujHobbiTextBox.TabIndex = 11;
             // 
             // lblUjhobbi

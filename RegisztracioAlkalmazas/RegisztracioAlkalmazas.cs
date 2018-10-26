@@ -14,6 +14,7 @@ namespace RegisztracioAlkalmazas
     public partial class RegisztracioAlkalmazas : Form
     {
 
+       
         public RegisztracioAlkalmazas()
         {
             InitializeComponent();
@@ -33,8 +34,9 @@ namespace RegisztracioAlkalmazas
         }
         private void Mentes()
         {
+            
             string tartalom = hobbiListBox.Items.ToString();
-            string tartalom1 = hobbiListBox.SelectedItem.ToString();
+            string tartalom1 = hobbiListBox.SelectedItem.ToString(); ;
             string tartalom2 = nevTextBox.Text;
             string tartalom3 = szuldatTextBox.Text;
             string tartalom4 = NradioButton.Text;
@@ -61,13 +63,18 @@ namespace RegisztracioAlkalmazas
 
                 File.WriteAllText(fileNev, itemString);*/
                 string hobbik = "";
-
+                
                 // assume the li is a string - will fail if not
                 foreach (string hobbi in hobbiListBox.Items)
                 {
                     hobbik = hobbik + hobbi + Environment.NewLine;
                 }
                 hobbik = Environment.NewLine + hobbik;
+                if(hobbiListBox.SelectedItem == null)
+                {
+                    MessageBox.Show("Nem választottál hobbit");
+                }
+                
                 if (FradioButton.Checked == true)
                 {
                     File.WriteAllText(fileNev, "Név: " + tartalom2 + "\nNem: Férfi\nSzületési Dátum: " + tartalom3 + "\nKedvenc hobbi: " + tartalom1 + "\n" + hobbik);
@@ -92,8 +99,13 @@ namespace RegisztracioAlkalmazas
             openFileDialog.FileName = "";
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-                hobbiListBox.Text = File.ReadAllText(openFileDialog.FileName);
-                MessageBox.Show(hobbiListBox.Text);
+                //nevTextBox.Text = File.ReadAllText(openFileDialog.FileName);
+               // string sor = adatok[i];
+
+                //nevTextBox.Text = File.ReadLines(openFileDialog.FileName);
+                //szuldatTextBox.Text = File.ReadAllText(openFileDialog.FileName);
+                //hobbiListBox.Text = File.ReadAllText(openFileDialog.FileName);
+                MessageBox.Show(File.ReadAllText(openFileDialog.FileName));
             }
            
         }
@@ -122,7 +134,5 @@ namespace RegisztracioAlkalmazas
         {
             Megnyitas();
         }
-
-        
     }
 }
